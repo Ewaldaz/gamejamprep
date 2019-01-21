@@ -95,7 +95,7 @@ namespace Assets.Scripts.Core
         private static void AddTileIfEmpty(ref List<MapTile> map, int x, int z, GameObject[] tiles)
         {
             var tile = map.Where(t => t.x == x && t.z == z).FirstOrDefault();
-            if (!tile?.hasTerrain ?? true)
+            if (tile == null || !tile.hasTerrain)
             {
                 Instantiate(GenerateTile(tiles), new Vector3(x, 0, z), Quaternion.identity);
 

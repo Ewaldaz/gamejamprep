@@ -9,6 +9,7 @@ public class CoinCollector : MonoBehaviour
     public AudioSource CoinCollectedSound;
     [Range(0f, 2f)]
     public float Test;
+    public GameObject effect;
 
     public void OnCollisionEnter(Collision obj)
     {
@@ -16,10 +17,11 @@ public class CoinCollector : MonoBehaviour
         {
             CoinCollectedSound.Play();
 
-            obj.gameObject.GetComponent<PlayerController>().Score += Value;            
-            Destroy(gameObject);
-            // TODO: play some particles
+            obj.gameObject.GetComponent<PlayerController>().Score += Value;
+            
+            Instantiate(effect, transform.position, transform.rotation);
 
+            Destroy(gameObject);
             FindObjectOfType<GameManager>().CoinsRemaining -= 1;
             collided = true;
         }

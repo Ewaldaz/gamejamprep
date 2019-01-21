@@ -33,7 +33,7 @@ public class PlayerController : MonoBehaviour
     {
         checkInput();
 
-        ScoreText.text = $"Points: {Score}";
+        ScoreText.text = string.Format("Points: {0}", Score);
         
         if (transform.position.y < -1)
         {

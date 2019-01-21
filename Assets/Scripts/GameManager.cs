@@ -42,12 +42,12 @@ public class GameManager : MonoBehaviour
         {
             score = PlayerPrefs.GetInt(PlayerPrefsKey, 0);
         }
-        HighScoreText.text = $"Highscore: {score}";
+        HighScoreText.text = string.Format("Highscore: {0}", score);
     }
 
     void Update()
     {
-        RemainingText.text = $"Remaining: {CoinsRemaining}";
+        RemainingText.text = string.Format("Remaining: {0}", CoinsRemaining);
         if (!ended && CoinsRemaining == 0)
         {
             ended = true;

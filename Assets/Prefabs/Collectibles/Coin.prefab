@@ -109,6 +109,7 @@ MonoBehaviour:
   coinCollider: {fileID: 9097359006866216049}
   CoinCollectedSound: {fileID: 0}
   Test: 0
+  effect: {fileID: 1329845292236604, guid: 9bba9cf244c53c5439505dfc96fdd11c, type: 3}
 --- !u!54 &5319970745080832350
 Rigidbody:
   m_ObjectHideFlags: 0
