@@ -79,15 +79,6 @@ public class PlayerController : MonoBehaviour
         );
         #endregion Move
 
-        #region Camera Follow
-        mainCamera.transform.position = new Vector3
-        (
-            x + cameraOffset,
-            mainCamera.transform.position.y,
-            z + cameraOffset
-        );
-        #endregion Camera Follow
-
         #region Rotation and animations
         if (transform.position != prevLoc)
         {
