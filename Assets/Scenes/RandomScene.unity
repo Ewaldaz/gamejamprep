@@ -232,7 +232,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1357,6 +1357,8 @@ MonoBehaviour:
   LoosePanel: {fileID: 538385033}
   PausePanel: {fileID: 488290412}
   CoinCollectedSound: {fileID: 7885954455047823648}
+  WinEffect: {fileID: 2659705931104943767, guid: 0bc681a84c0c65f498eaa8e1c92e3dd5,
+    type: 3}
   Tiles:
   - {fileID: 3522867863745080505, guid: 62bf5d239491ec04aac2063a76dc9f3c, type: 3}
   - {fileID: 9115863905285639140, guid: a9049ce7d599467428f1b6c479a91676, type: 3}
@@ -1368,9 +1370,9 @@ MonoBehaviour:
   - {fileID: 5891398715348240993, guid: 9e19af08d4f4f274898208672fe63363, type: 3}
   - {fileID: 7751370855095960176, guid: f7e17951f31f4de4587373c3e27a17a6, type: 3}
   - {fileID: 3494985986029670301, guid: 1f2ed0d144fe74e498930d51502e6a8f, type: 3}
-  MapWidth: 200
-  MapHeight: 200
-  RectangleCount: 7
+  MapWidth: 20
+  MapHeight: 20
+  RectangleCount: 2
   TileSize: 0.1
   CoinsRemaining: 0
   RemainingText: {fileID: 1346911611}

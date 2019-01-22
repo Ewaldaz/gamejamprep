@@ -1,4 +1,5 @@
 ﻿using Assets.Scripts.Core;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -11,6 +12,7 @@ public class GameManager : MonoBehaviour
     public GameObject LoosePanel;
     public GameObject PausePanel;
     public AudioSource CoinCollectedSound;
+    public GameObject WinEffect;
     public GameObject[] Tiles;
     public GameObject[] Coins;
     [Space]
@@ -76,7 +78,19 @@ public class GameManager : MonoBehaviour
     private void WinGame()
     {
         CheckHighScore();
-        Invoke("ShowWinPanel", restartDelay/2);
+        StartCoroutine(PlayWinEffect());
+    }
+
+    private IEnumerator PlayWinEffect()
+    {
+        if (WinEffect != null)
+        {
+
+            Instantiate(WinEffect, Player.transform);
+            yield return new WaitForSeconds(2);
+        }
+
+        Invoke("ShowWinPanel", restartDelay / 2);
     }
 
     private void CheckHighScore()
