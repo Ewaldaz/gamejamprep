@@ -365,6 +365,31 @@ Animation:
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 0
+--- !u!114 &166133477
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 166133470}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31d5981396e35604a8fdf39da13cbf4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!135 &166133478
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 166133470}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 6
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &203544270
 GameObject:
   m_ObjectHideFlags: 0
@@ -1370,9 +1395,9 @@ MonoBehaviour:
   - {fileID: 5891398715348240993, guid: 9e19af08d4f4f274898208672fe63363, type: 3}
   - {fileID: 7751370855095960176, guid: f7e17951f31f4de4587373c3e27a17a6, type: 3}
   - {fileID: 3494985986029670301, guid: 1f2ed0d144fe74e498930d51502e6a8f, type: 3}
-  MapWidth: 20
-  MapHeight: 20
-  RectangleCount: 2
+  MapWidth: 200
+  MapHeight: 200
+  RectangleCount: 7
   TileSize: 0.1
   CoinsRemaining: 0
   RemainingText: {fileID: 1346911611}

@@ -12,30 +12,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: dirt
       objectReference: {fileID: 0}
-    - target: {fileID: 4266692164143970146, guid: 2923d25f34fb08442949470b94753fdc,
-        type: 3}
-      propertyPath: color.r
-      value: 0.38679248
-      objectReference: {fileID: 0}
-    - target: {fileID: 4266692164143970146, guid: 2923d25f34fb08442949470b94753fdc,
-        type: 3}
-      propertyPath: color.g
-      value: 0.28980225
-      objectReference: {fileID: 0}
-    - target: {fileID: 4266692164143970146, guid: 2923d25f34fb08442949470b94753fdc,
-        type: 3}
-      propertyPath: color.b
-      value: 0.11859204
-      objectReference: {fileID: 0}
-    - target: {fileID: 4266692164143970146, guid: 2923d25f34fb08442949470b94753fdc,
-        type: 3}
-      propertyPath: color.a
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2195838541589271989, guid: 2923d25f34fb08442949470b94753fdc,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.0000002
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2195838541589271989, guid: 2923d25f34fb08442949470b94753fdc,
         type: 3}
@@ -45,7 +25,7 @@ PrefabInstance:
     - target: {fileID: 2195838541589271989, guid: 2923d25f34fb08442949470b94753fdc,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2195838541589271989, guid: 2923d25f34fb08442949470b94753fdc,
         type: 3}
@@ -86,6 +66,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4266692164143970146, guid: 2923d25f34fb08442949470b94753fdc,
+        type: 3}
+      propertyPath: color.r
+      value: 0.38679248
+      objectReference: {fileID: 0}
+    - target: {fileID: 4266692164143970146, guid: 2923d25f34fb08442949470b94753fdc,
+        type: 3}
+      propertyPath: color.g
+      value: 0.28980225
+      objectReference: {fileID: 0}
+    - target: {fileID: 4266692164143970146, guid: 2923d25f34fb08442949470b94753fdc,
+        type: 3}
+      propertyPath: color.b
+      value: 0.11859204
+      objectReference: {fileID: 0}
+    - target: {fileID: 4266692164143970146, guid: 2923d25f34fb08442949470b94753fdc,
+        type: 3}
+      propertyPath: color.a
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2195838541589271988, guid: 2923d25f34fb08442949470b94753fdc,
         type: 3}
