@@ -1,5 +1,7 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.AI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -10,11 +12,11 @@ public class PlayerController : MonoBehaviour
     public Text ScoreText;
     public int lifeRemaining = 3;
     public float lookSpeed = 10;
-    public GameObject mainCamera;
+    public NavMeshAgent agent;
 
     bool up = false;
+    bool running = false;
     Vector3 prevLoc;
-    float cameraOffset = 12;
     float inputV, inputH, jump = 0;
 
     public int Score
@@ -41,9 +43,34 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private void checkMouseClick()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+          //  agent.enabled = true;
+            var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+
+            if (Physics.Raycast(ray, out hit))
+            {
+                Debug.Log(hit.point);
+                if (agent.isOnNavMesh)
+                {
+                    running = true;
+                    agent.SetDestination(hit.point);
+                }
+            }            
+        }
+        if (agent.remainingDistance <= 0.1f)
+        {
+            running = false;
+        }
+    }
+
     void FixedUpdate()
     {
         doMove();
+        checkMouseClick();
     }
 
     void OnCollisionEnter(Collision col)
@@ -79,8 +106,9 @@ public class PlayerController : MonoBehaviour
         );
         #endregion Move
 
+
         #region Rotation and animations
-        if (transform.position != prevLoc)
+        if (transform.position != prevLoc || running)
         {
             transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(transform.position - prevLoc), Time.fixedDeltaTime * lookSpeed);
             GetComponent<Animator>().Play("Running");
@@ -107,6 +135,15 @@ public class PlayerController : MonoBehaviour
     {
         inputV = Input.GetAxis("Vertical");
         inputH = Input.GetAxis("Horizontal");
+
+        if (inputV != 0 || inputH != 0)
+        {
+            //  agent.enabled = false;
+            if (agent.isOnNavMesh)
+            {
+                agent.ResetPath();
+            }
+        }
 
         jump = Input.GetAxis("Jump");
         if (jump != 0)

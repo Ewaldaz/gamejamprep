@@ -8,6 +8,8 @@ namespace Assets.Scripts.Core
 {
     class MapGenerator : MonoBehaviour
     {
+        private static float y = -1f;
+
         public static int GenerateMap(GameObject[] tiles, int mapWidth, int mapHeight, int rectangleCount, float tileSize, GameObject[] coins, AudioSource coinCollectorSound)
         {
             var temp = new List<MapTile>();
@@ -28,7 +30,7 @@ namespace Assets.Scripts.Core
                         int x = i - rectWidth / 2 + offsetX;
                         int z = j - rectHeight / 2 + offsetZ;
 
-                        Instantiate(GenerateTile(tiles), new Vector3(x, -1, z), Quaternion.identity);
+                        Instantiate(GenerateTile(tiles), new Vector3(x, y, z), Quaternion.identity);
 
                         bool occupied = GenerateRocks();
                         temp.Add(new MapTile() { x = x, z = z, occupied = occupied, center = i == rectWidth / 2 && j == rectHeight / 2, hasTerrain = true });
@@ -97,7 +99,7 @@ namespace Assets.Scripts.Core
             var tile = map.Where(t => t.x == x && t.z == z).FirstOrDefault();
             if (tile == null || !tile.hasTerrain)
             {
-                Instantiate(GenerateTile(tiles), new Vector3(x, -1, z), Quaternion.identity);
+                Instantiate(GenerateTile(tiles), new Vector3(x, y, z), Quaternion.identity);
 
                 bool occupied = GenerateRocks();
                 map.Add(new MapTile() { x = x, z = z, occupied = occupied, center = false, hasTerrain = true });

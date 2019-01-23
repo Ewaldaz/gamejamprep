@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 2195838541589271993}
   - component: {fileID: 1092274227170132414}
   - component: {fileID: 4266692164143970146}
+  - component: {fileID: 6437738376098076215}
   m_Layer: 0
   m_Name: tileOfMap
   m_TagString: Tile
@@ -92,7 +93,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 14
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!65 &2195838541589271993
@@ -117,7 +118,7 @@ BoxCollider:
   m_GameObject: {fileID: 2195838541589271990}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 9, y: 9, z: 9}
   m_Center: {x: 0, y: 4, z: 0}
@@ -137,3 +138,19 @@ MonoBehaviour:
   myCollideTrigger: {fileID: 0}
   color: {r: 0, g: 0, b: 0, a: 0}
   material: {fileID: 2100000, guid: c976c85275566d349bd44073a4c0d589, type: 2}
+--- !u!114 &6437738376098076215
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2195838541589271990}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 0
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff

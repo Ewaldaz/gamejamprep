@@ -1,8 +1,10 @@
 ﻿using Assets.Scripts.Core;
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.AI;
 
 public class GameManager : MonoBehaviour
 {
@@ -13,8 +15,10 @@ public class GameManager : MonoBehaviour
     public GameObject PausePanel;
     public AudioSource CoinCollectedSound;
     public GameObject WinEffect;
+    public NavMeshSurface Surface;
     public GameObject[] Tiles;
     public GameObject[] Coins;
+
     [Space]
     [Header("Map settings")]
     public int MapWidth = 10;
@@ -36,6 +40,12 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1;
         CoinsRemaining = MapGenerator.GenerateMap(Tiles, MapWidth, MapHeight, RectangleCount, TileSize, Coins, CoinCollectedSound);
         SetHighScoreText();
+        InitNavMesh();
+    }
+
+    private void InitNavMesh()
+    {
+        Surface.BuildNavMesh();
     }
 
     private void SetHighScoreText(int score = 0)
